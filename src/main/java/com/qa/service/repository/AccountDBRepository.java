@@ -6,11 +6,11 @@ import javax.persistence.TypedQuery;
 
 import com.qa.domain.Account;
 
-import antlr.collections.List;
 
 import static javax.transaction.Transactional.TxType.REQUIRED;
 import static javax.transaction.Transactional.TxType.SUPPORTS;
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Transactional(SUPPORTS)
 public class AccountDBRepository {
