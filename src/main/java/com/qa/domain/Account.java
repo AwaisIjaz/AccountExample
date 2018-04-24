@@ -1,7 +1,15 @@
 package com.qa.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Account {
 
+	@GeneratedValue
+	@Id 
+	private int id;
 	private String firstName;
 	private String secondName;
 	private String accountNumber;
@@ -34,6 +42,13 @@ public class Account {
 
 	public void setAccountNumber(String accountNumber) {
 		this.accountNumber = accountNumber;
+	}
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }
