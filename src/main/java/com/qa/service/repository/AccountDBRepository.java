@@ -1,5 +1,6 @@
 package com.qa.service.repository;
 
+import javax.enterprise.inject.Default;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
@@ -13,7 +14,8 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Transactional(SUPPORTS)
-public class AccountDBRepository {
+@Default
+public class AccountDBRepository implements AccountRepository{
 	
 	@PersistenceContext(unitName = "primary")
 	private EntityManager em;
@@ -55,4 +57,5 @@ public class AccountDBRepository {
 	public void deleteAccount(int id){
 		em.remove(em.getReference(Account.class, id));
 	}
+	
 }
